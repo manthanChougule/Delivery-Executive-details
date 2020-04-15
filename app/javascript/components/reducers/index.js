@@ -20,7 +20,7 @@ export function formReucer(state = initial ,action){
 		case 'EDIT_USER':
 			return state.map((user) => user.id === action.id ?
 											{...user,editing:!user.editing}:user);
-		case 'UPDATE':
+		case 'UPDATE_USER':
 			return state.map((user) => {
 				if(user.id === action.id){
           return {
