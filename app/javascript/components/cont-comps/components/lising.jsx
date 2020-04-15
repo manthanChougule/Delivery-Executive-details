@@ -21,9 +21,9 @@ class Listing extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log("Hello",state)
+  console.log("Hello Lisiting",state)
   return {
-    users: state.users
+    users : state.users
   }
 }
 

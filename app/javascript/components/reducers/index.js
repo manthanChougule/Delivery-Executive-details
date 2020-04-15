@@ -2,25 +2,26 @@
 
 // import { createStore } from 'redux'
 // export const store = createStore(formReucer)
-
+import * as types from './types'
 const initial = {
     users: []
 }
 
-export function formReucer(state = initial ,action){
+export const formReucer = (state = initial, action ) => {
     switch(action.type){
-        case 'ADD_USER':
-			console.log("reducer")
-			return {
+        case types.ADD_USER:
+            console.log("reducer")
+            console.log("")
+            return {//state.users.concat([action.payload]); 
 				...state,
 				users: state.users.concat([action.payload])
-			} //state.concat([action.payload]); 
-		case 'DELETE_USER':
+			} 
+		case types.DELETE_USER:
 			return state.filter((user) => action.payload !== action.id);
-		case 'EDIT_USER':
+		case types.EDIT_USER:
 			return state.map((user) => user.id === action.id ?
 											{...user,editing:!user.editing}:user);
-		case 'UPDATE_USER':
+		case types.EDIT_USER:
 			return state.map((user) => {
 				if(user.id === action.id){
           return {

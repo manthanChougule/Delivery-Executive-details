@@ -4,6 +4,9 @@ import Button from '@material-ui/core/Button'
 import DeleteIcon from '@material-ui/icons/Delete'
 import EditIcon from '@material-ui/icons/Edit';
 
+import { deleteUser , editUser }  from '../../reducers/actions'
+
+
 class User extends Component {
     render() {
       return(
@@ -13,16 +16,21 @@ class User extends Component {
           <h2>Contact: {this.props.user.contact}</h2>
           <h2>Address: {this.props.user.address}</h2>
             <Button variant="contained" color="primary" startIcon={<EditIcon />}
-              onClick={() => this.props.dispatch(deleteUser(this.props.user))}> 
+              onClick={deleteUser(user)}> 
               Edit 
             </Button>
             <Button variant="contained" color="secondary" startIcon={<DeleteIcon />}
-              onClick={() => this.props.dispatch(editUser(this.props.user))}>
+              onClick={editUser(user)}>
               Delete
             </Button>
         </div>
       );
     }
   }
+
+  const mapDispatchToProps = {
+    deleteUser,
+    editUser
+  }
   
-  export default connect()(User)
+  export default connect(null ,mapDispatchToProps)(User)

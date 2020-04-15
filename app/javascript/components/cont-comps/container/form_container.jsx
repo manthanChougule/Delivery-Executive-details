@@ -7,7 +7,7 @@ import { Paper } from '@material-ui/core';
 import withStyles from '@material-ui/core/styles/withStyles'
 import Container from '@material-ui/core/Container';
 
-
+import {addUser}  from '../../reducers/actions'
 
 const styles = theme => ({
   paper: {
@@ -37,6 +37,14 @@ class FormikForm extends Component {
               <Formik 
                 initialValues={values}
                 validationSchema={FormSchema}
+                onSubmit={(values,{ setSubmitting }) => {
+                  setTimeout(() => {
+                    console.log(values);
+                    addUser(values);
+                    console.log(addUser(values));
+                    setSubmitting(false);
+                  },400);
+                }}
               >
                 {props => <Basicform {...props}/>}
               </Formik>
@@ -47,6 +55,15 @@ class FormikForm extends Component {
   }
 }
 
+// const mapStateToProps = (state) => {
+//   console.log("Hello Form",state)
+//   return {
+//     users
+//   }
+// }
+const mapDisptchToProps = {
+   addUser
+}
 
 const NewUser = withStyles(styles)(FormikForm)
-export default connect()(NewUser)
+export default connect(null ,mapDisptchToProps)(NewUser)

@@ -10,7 +10,10 @@ import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import { createStore } from 'redux'
 import { formReucer } from '../components/reducers'
-const store = createStore(formReucer)
+
+import { composeWithDevTools } from 'redux-devtools-extension'
+
+const store = createStore(formReucer, composeWithDevTools())
 
 
 

@@ -5,22 +5,21 @@ import TextField from '@material-ui/core/TextField'
 
 
 const Basicform = (props) => {
+  // constructor(props) {
+  //   this.state = {
+  //     inputData: {}
+  //   }
+  // } 
   const {
     values: {id, firstname, lastname, contact, address },
     errors,
     touched,
     handleChange,
+    handleSubmit,
     isValid,
     setFieldTouched
   } = props;
   
-  const handleSubmit = () => {
-    sleep(1000).then(()=>{
-    console.log(props.values);
-      }
-    )
-  }
-
   const change = ( name, e ) => {
     e.persist();
     handleChange(e);
