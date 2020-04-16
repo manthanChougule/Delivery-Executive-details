@@ -41,7 +41,8 @@ class FormikForm extends Component {
                   setTimeout(() => {
                     console.log(values);
                     addUser(values);
-                    console.log(addUser(values));
+                    console.log("State",this.state.users)
+                    console.log("Submit",addUser(values));
                     setSubmitting(false);
                   },400);
                 }}
@@ -55,9 +56,13 @@ class FormikForm extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return console.log(" State Hello ",state.users)
+}
+
 const mapDisptchToProps = {
    addUser
 }
 
 const NewUser = withStyles(styles)(FormikForm)
-export default connect(null ,mapDisptchToProps)(NewUser)
+export default connect(mapStateToProps ,mapDisptchToProps)(NewUser)
