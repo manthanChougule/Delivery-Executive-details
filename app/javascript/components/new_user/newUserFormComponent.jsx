@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import { Formik } from 'formik'
-import { connect } from 'react-redux'
-import Basicform from '../form'
-import { FormSchema } from '../validation'
+import Basicform from '../common/form'
+import { FormSchema } from '../common/validation'
 import { Paper } from '@material-ui/core';
 import withStyles from '@material-ui/core/styles/withStyles'
 import Container from '@material-ui/core/Container';
-
-import {addUser}  from '../../reducers/actions'
 
 const styles = theme => ({
   paper: {
@@ -16,7 +13,7 @@ const styles = theme => ({
     flexDirection: "column",
     padding: `${theme.spacing(5)}px ${theme.spacing(5)}px ${theme.spacing(5)}px `,
     maxWidth: "sm"
-  },
+  },//
   container: {
   maxWidth: "500px"
   },
@@ -54,14 +51,6 @@ class FormikForm extends Component {
     )
   }
 }
-
-const mapStateToProps = state => {
-  return console.log(" State Hello ",state.users)
-}
-
-const mapDisptchToProps = {
-   addUser
-}
-
 const NewUser = withStyles(styles)(FormikForm)
-export default connect(mapStateToProps ,mapDisptchToProps)(NewUser)
+
+export default NewUser

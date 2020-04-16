@@ -2,12 +2,12 @@
 
 // import { createStore } from 'redux'
 // export const store = createStore(formReucer)
-import * as types from './types'
+import { default as types } from './types'
 const initial = {
     users: []
 }
 
-export const formReucer = (state = initial, action ) => {
+const userReducer = (state = initial, action ) => {
     switch(action.type){
         case types.ADD_USER:
             console.log("reducer")
@@ -40,3 +40,4 @@ export const formReucer = (state = initial, action ) => {
 }
 
 
+export default userReducer

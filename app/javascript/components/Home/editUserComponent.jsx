@@ -1,20 +1,8 @@
 import React,{ Component } from 'react'
-import { connect } from 'react-redux'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
-import {editUser} from '../../reducers/actions'
-
 
 class EditUser extends Component {
-//   onSubmit = { ( values,{ setSubmitting }) => {
-//     setTimeout(() => {
-//       console.log(values);
-//       editUser(values);
-//       console.log(editUser(values));
-//       setSubmitting(false);
-//     },400);
-//   }
-// }
   handleSubmit = (editUser) => {
     editUser( values)
   }
@@ -77,7 +65,5 @@ class EditUser extends Component {
     );
   }
 }
- 
-const mapDispatchToProps = { editUser }
 
-export default connect(null ,mapDispatchToProps)(EditUser)
+export default EditUser

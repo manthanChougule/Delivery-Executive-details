@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import FormikForm from './cont-comps/components/NewUser_component'
-import Listing from './cont-comps/containers/newUser_container' 
+import FormikForm from '../new_user/newUserFormContainer'
+import Listing from '../Home/listingUserContainer' 
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import AppBar from  '@material-ui/core/AppBar'
@@ -9,7 +9,6 @@ import Tab from '@material-ui/core/Tab'
 import { Paper } from '@material-ui/core'
 import Typography from '@material-ui/core/Typography'
 import { Link, Route, BrowserRouter, Switch } from 'react-router-dom'
-
 
 
 function TabContainer({ childern , dir }) {

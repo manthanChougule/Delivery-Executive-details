@@ -9,11 +9,11 @@ import { Provider } from 'react-redux'
 //import { store } from '../components/reducers'
 import { BrowserRouter } from 'react-router-dom'
 import { createStore, applyMiddleware } from 'redux'
-import { formReucer } from '../components/reducers'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
+import userReducer from '../components/ducks'
 
-const store = createStore(formReucer,
+const store = createStore(userReducer,
                          composeWithDevTools(
                          applyMiddleware(thunk)))
 
