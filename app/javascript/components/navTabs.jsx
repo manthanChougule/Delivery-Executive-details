@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import FormikForm from './cont-comps/components/form_component'
-import Listing from './cont-comps/containers/lising' 
+import FormikForm from './cont-comps/components/NewUser_component'
+import Listing from './cont-comps/containers/newUser_container' 
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import AppBar from  '@material-ui/core/AppBar'

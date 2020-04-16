@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import User from './user'
-import EditUser from './edit_user'
+import User from './user_container'
+import EditUser from './editUser_container'
 import { connect } from 'react-redux';
 
 

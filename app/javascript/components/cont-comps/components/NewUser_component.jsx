@@ -41,8 +41,7 @@ class FormikForm extends Component {
                   setTimeout(() => {
                     console.log(values);
                     addUser(values);
-                    console.log("State",this.state.users)
-                    console.log("Submit",addUser(values));
+                    console.log("ACTION AFTER SUBMIT",addUser(values));
                     setSubmitting(false);
                   },400);
                 }}
