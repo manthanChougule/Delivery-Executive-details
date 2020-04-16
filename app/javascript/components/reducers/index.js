@@ -12,24 +12,24 @@ export const formReucer = (state = initial, action ) => {
         case types.ADD_USER:
             console.log("reducer")
             console.log("")
-            return {//state.users.concat([action.payload]); 
+            return {
 				...state,
 				users: state.users.concat([action.payload])
 			} 
 		case types.DELETE_USER:
-			return state.filter((user) => action.payload !== action.id);
+			return state.users.filter((user) => action.payload !== action.id);
 		case types.EDIT_USER:
-			return state.map((user) => user.id === action.id ?
+			return state.users.map((user) => user.id === action.id ?
 											{...user,editing:!user.editing}:user);
 		case types.EDIT_USER:
-			return state.map((user) => {
+			return state.users.map((user) => {
 				if(user.id === action.id){
           return {
             ...user,
-            firstname:action.data.newFirstName,
-            lastname:action.data.newLastName,
-            contact:action.data.newContact,
-            address:action.data.newAddress,
+            firstname:action.values.newFirstName,
+            lastname:action.values.newLastName,
+            contact:action.values.newContact,
+            address:action.values.newAddress,
             editing:!user.editing
           }
 				} else return user;

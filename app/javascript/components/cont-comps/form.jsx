@@ -4,14 +4,9 @@ import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 
 
-const Basicform = (props) => {
-  // constructor(props) {
-  //   this.state = {
-  //     inputData: {}
-  //   }
-  // } 
+const Basicform = (props) => { 
   const {
-    values: {id, firstname, lastname, contact, address },
+    values: { id, firstname, lastname, contact, address},
     errors,
     touched,
     handleChange,

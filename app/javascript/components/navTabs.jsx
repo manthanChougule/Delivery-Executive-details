@@ -28,7 +28,6 @@ TabContainer.propsTypes = {
 const styles = theme => ({
 	root: {
 		backgroundColor: theme.palette.background.paper,
-		//width: 500
 	}
 });
 
@@ -56,7 +55,7 @@ class NavTab extends Component {
 							onChange={this.handleChange}
 							indicatorColor="primary"
 							textColor="primary"
-							//fullWidth
+							
 						>
 							<Tab label="Listing" component={Link} to="/" />
 							<Tab label="NewUser" component={Link} to="new_user" />

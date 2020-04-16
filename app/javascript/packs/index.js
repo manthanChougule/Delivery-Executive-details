@@ -8,12 +8,14 @@ import App from '../components/App'
 import { Provider } from 'react-redux'
 //import { store } from '../components/reducers'
 import { BrowserRouter } from 'react-router-dom'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { formReucer } from '../components/reducers'
-
+import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-const store = createStore(formReucer, composeWithDevTools())
+const store = createStore(formReucer,
+                         composeWithDevTools(
+                         applyMiddleware(thunk)))
 
 
 

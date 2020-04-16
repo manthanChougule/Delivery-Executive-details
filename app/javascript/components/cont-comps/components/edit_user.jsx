@@ -1,48 +1,83 @@
 import React,{ Component } from 'react'
 import { connect } from 'react-redux'
 import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField'
+import {editUser} from '../../reducers/actions'
+
 
 class EditUser extends Component {
-    handleEdit = (e) => {
-      e.preventDefault();
-      const newFirstName = this.getFirstName.value;
-      const newLastName = this.getLastName.value;
-      const newContact = this.getContact.value;
-      const newAddress = this.getAddress.value;
-      const data ={
-        id: new Date(),
-        newFirstName,
-        newLastName,
-        newContact,
-        newAddress,
-        editing:false
-      }
-      this.props.dispatch({type: 'UPDATE', id:this.props.user.id, data:data})
-    }
-    render() {
-      return (
-        <div>
-          <form>
-            <h3>First Name :</h3>
-              <input required type="text" ref={(input) => this.getFirstName = input}
-              defaultValue={this.props.user.firstname} placeholder="First Name"/>
-            <h3>Last Name :</h3>
-              <input required type="text" ref={(input) => this.getLastName = input}
-              defaultValue={this.props.user.lastname} placeholder="Last Name"/>
-            <h3>Contact</h3>
-              <input required type="number" ref={(input) => this.getContact = input}
-              defaultValue={this.props.user.contact} placeholder="Enter Ur Phone NO" />
-            <h3>Address</h3>
-              <textarea required rows="5" ref={(input) => this.getAddress = input}
-              cols="20" defaultValue={this.props.user.address} placeholder="Enter address" /><br />
-             <Button onClick={this.handleEdit} 
-              variant="contained" color="primary">
-              Update
-            </Button>
-          </form>
-        </div>
-      );
-    }
+//   onSubmit = { ( values,{ setSubmitting }) => {
+//     setTimeout(() => {
+//       console.log(values);
+//       editUser(values);
+//       console.log(editUser(values));
+//       setSubmitting(false);
+//     },400);
+//   }
+// }
+  handleSubmit = (editUser) => {
+    editUser( values)
   }
-  
-  export default connect()(EditUser)
+  render() {
+    const values = { id: new Date(), newFirstname, newLastname, newContact, newAddress, editting: false};
+    return (
+      <div>
+        <form onSubmit={handleSubmit}>
+          <TextField
+            id="newFirstname"
+            name="newFirstname"
+            label="New First Name"
+            defaultValue={this.props.user.firstname}
+            fullWidth
+            helperText={touched.firstname ? errors.firstname : ""}
+            error={touched.firstname && Boolean(errors.firstname)}
+            onChange={change.bind(null ,"newFirstname")}
+
+          />
+
+          <TextField
+            id="newLastname"
+            name="newLastname"
+            label="New Last Name"
+            defaultValue={this.props.user.lastname} 
+            fullWidth
+            helperText={touched.lastname ? errors.lastname : ""}
+            error={touched.lastname && Boolean(errors.lastname)}
+            onChange={change.bind(null ,"newLastname")}
+              
+          />
+          <TextField
+            id="newContact"
+            name="newContact"
+            label="New Contact"
+            defaultValue={this.props.user.contact}
+            fullWidth
+            helperText={touched.contact ? errors.contact : ""}
+            error={touched.contact && Boolean(errors.contact)}
+            onChange={change.bind(null ,"newContact")}
+              
+          />
+          <TextField
+            id="newAddress"
+            name="newAddress"
+            label="New Address"
+            defaultValue={this.props.user.address}
+            fullWidth
+            helperText={touched.address ? errors.address : ""}
+            error={touched.address && Boolean(errors.address)}
+            onChange={change.bind(null ,"newAddress")}
+          />
+          <Button 
+            type="submit" 
+            variant="contained" color="primary">
+            Update
+          </Button>
+        </form>
+      </div>
+    );
+  }
+}
+ 
+const mapDispatchToProps = { editUser }
+
+export default connect(null ,mapDispatchToProps)(EditUser)

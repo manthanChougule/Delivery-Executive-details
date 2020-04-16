@@ -28,7 +28,7 @@ const styles = theme => ({
 class FormikForm extends Component {
   render() {
     const classes = this.props;
-    const values = { id: new Date(), firstname: "", lastname: "" , contact: "", address: "" };
+    const values = { id: new Date(), firstname: "", lastname: "", contact: "", address: ""};
     return (
       <div className={classes.container}>
           <Paper elevation={1} className={classes.paper}>
@@ -55,12 +55,6 @@ class FormikForm extends Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   console.log("Hello Form",state)
-//   return {
-//     users
-//   }
-// }
 const mapDisptchToProps = {
    addUser
 }
