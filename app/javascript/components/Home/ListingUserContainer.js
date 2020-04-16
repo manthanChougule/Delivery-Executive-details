@@ -1,6 +1,6 @@
 
 // container.js
-import Listing from './lisitingUserComponent'
+import LisitingUserComponent from './LisitingUserComponent'
 import { connect } from 'react-redux' 
 
 const mapStateToProps = (state) => {
@@ -10,6 +10,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-const lisitingUserContainer = connect(mapStateToProps)(Listing)
+const LisitingUserContainer = connect(mapStateToProps)(LisitingUserComponent)
 
-export default lisitingUserContainer
+export default LisitingUserContainer

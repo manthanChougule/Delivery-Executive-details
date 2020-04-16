@@ -1,5 +1,5 @@
 //edit container.js
-import EditUser from './editUserComponent'
+import EditUserComponent from './EditUserComponent'
 import { connect } from 'react-redux'
 import editUser from '../ducks/actions'
 
@@ -8,9 +8,9 @@ const mapDispatchToProps = {
 }
 
 
-const editUserContainer = connect(
+const EditUserContainer = connect(
   null ,
   mapDispatchToProps
-  )(EditUser)
+  )(EditUserComponent)
 
-export default editUserContainer
+export default EditUserContainer

@@ -2,7 +2,7 @@ import React,{ Component } from 'react'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 
-class EditUser extends Component {
+class EditUserComponent extends Component {
   handleSubmit = (editUser) => {
     editUser( values)
   }
@@ -66,4 +66,4 @@ class EditUser extends Component {
   }
 }
 
-export default EditUser
+export default EditUserComponent

@@ -1,6 +1,4 @@
-import React, {Component} from 'react'
-import FormikForm from '../new_user/newUserFormContainer'
-import Listing from '../Home/listingUserContainer' 
+import React, {Component} from 'react' 
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import AppBar from  '@material-ui/core/AppBar'
@@ -9,6 +7,13 @@ import Tab from '@material-ui/core/Tab'
 import { Paper } from '@material-ui/core'
 import Typography from '@material-ui/core/Typography'
 import { Link, Route, BrowserRouter, Switch } from 'react-router-dom'
+
+
+
+//files
+import FormikNewUserContainer from '../new_user/FormikNewUserContainer'
+//import NewUserFormContainer from '../new_user/NewUserFormContainer'
+import ListingUserContainer from '../Home/ListingUserContainer'
 
 
 function TabContainer({ childern , dir }) {
@@ -79,7 +84,7 @@ function TabOne() {
 	return(
 		<Paper>
 			<div>
-				<Listing />
+				<ListingUserContainer />
 			</div>
 		</Paper>
 	)
@@ -89,7 +94,7 @@ function TabTwo() {
 	return(
 		<Paper>
 			<div>
-				<FormikForm />
+				<FormikNewUserContainer />
 			</div>
 		</Paper>
 	)

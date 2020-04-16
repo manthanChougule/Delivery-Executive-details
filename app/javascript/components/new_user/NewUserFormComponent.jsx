@@ -51,6 +51,6 @@ class FormikForm extends Component {
     )
   }
 }
-const NewUser = withStyles(styles)(FormikForm)
+const NewUserFormComponent = withStyles(styles)(FormikForm)
 
-export default NewUser
+export default NewUserFormComponent

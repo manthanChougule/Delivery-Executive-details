@@ -1,7 +1,7 @@
 
 
 ///Container 
-import NewUser from './newUserFormComponent'
+import NewUserFormComponent from './NewUserFormComponent'
 import { connect } from 'react-redux'
 import addUser from '../ducks/actions'
 
@@ -9,9 +9,9 @@ import addUser from '../ducks/actions'
 const mapDisptchToProps = {
    addUser
 }
-const newUserFormContainer = connect(
+const NewUserFormContainer = connect(
   null,
   mapDisptchToProps)
-  (NewUser)
+  (NewUserFormComponent)
 
-export default newUserFormContainer
+export default NewUserFormContainer

@@ -1,7 +1,7 @@
 
 
 //user container.js
-import User from './newUserComponent'
+import NewUserComponent from './NewUserComponent'
 import { connect } from 'react-redux'
 import deleteUser from '../ducks/actions'
 import editUser from '../ducks/actions'
@@ -11,6 +11,6 @@ const mapDispatchToProps = {
   editUser
 }
 
-const newUserContainer = connect(null ,mapDispatchToProps)(User)
+const NewUserContainer = connect(null ,mapDispatchToProps)(NewUserComponent)
 
-export default newUserContainer
+export default NewUserContainer
