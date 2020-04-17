@@ -3,48 +3,60 @@ import { FormSchema } from '../common/validation'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 
 
+const divStyle = {
+  all: {
+    margin: '15px',
+    marginLeft: '25px'
+  },
+  lable: {
+    margin: '10px'
+  }
+}
 
-const FormikNewUserComopnent = () => {
+
+const FormikNewUserComopnent = (props) => {
   return (
       <Formik
         initialValues={ 
-          { firstname: '',
+          { id: new Date(),
+            firstname: '',
             lastname: '',
             contact: '',
-            address: '' }
+            address: '',
+            editing: false }
           }
         validationSchema={FormSchema}
         onSubmit={(values,{ setSubmitting }) => {
           setTimeout(()=>{
             console.log("Formik Submit", values);
-            addUser(values);
+            props.addUser(values);
             console.log("Submited");
             setSubmitting(false);
           },400)
         }}
       > 
       <Form>
-        <div className = "firstname">
-          <label htmlFor="firstname">First Name </label>
-          <Field name="firstname" type="text" />
-          <ErrorMessage name="firstname" />
+        <div className = "firstname" style={divStyle.all}>
+          <label htmlFor="firstname" style={divStyle.lable}>First Name </label> <br />
+          <Field name="firstname" type="text" /> <br />
+          <ErrorMessage name="firstname" /> <br />
         </div>
-        <div className = "lastname">
-          <label htmlFor="lastname">Last Name </label>
-          <Field name="lastname" type="text" />
-          <ErrorMessage name="lastname" />
+        <div className = "lastname" style={divStyle.all}>
+          <label htmlFor="lastname">Last Name </label> <br />
+          <Field name="lastname" type="text" /> <br />
+          <ErrorMessage name="lastname" /> <br />
         </div>
-        <div className="contact">
-          <label htmlFor="contact">Contact </label>
-          <Field name="contact" type="text" />
-          <ErrorMessage name="contact" />
+        <div className="contact" style={divStyle.all}>
+          <label htmlFor="contact">Contact </label> <br />
+          <Field name="contact" type="text" /> <br />
+          <ErrorMessage name="contact" /> <br />
         </div>
-        <div className="address">
-          <label htmlFor="address">Address</label>
-          <Field name="address" type="text" />
-          <ErrorMessage name="address" />
+        <div className="address" style={divStyle.all}>
+          <label htmlFor="address">Address</label> <br />
+          <Field name="address" type="text" /> <br />
+          <ErrorMessage name="address" /> <br />
         </div>
-        <div className="button">
+        <div className="button" style={divStyle.all}>
           <button type="submit">Submit</button>
         </div>
       </Form>

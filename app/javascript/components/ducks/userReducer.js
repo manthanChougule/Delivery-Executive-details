@@ -2,7 +2,7 @@
 
 // import { createStore } from 'redux'
 // export const store = createStore(formReucer)
-import { default as types } from './types'
+import types from './types'
 const initial = {
     users: []
 }
@@ -17,23 +17,35 @@ const userReducer = (state = initial, action ) => {
 				users: state.users.concat([action.payload])
 			} 
 		case types.DELETE_USER:
-			return state.users.filter((user) => action.payload !== action.id);
+            console.log("deleting")
+			return {
+                ...state,
+                users: state.users.filter((user) => user.id !== action.payload)
+            }
 		case types.EDIT_USER:
-			return state.users.map((user) => user.id === action.id ?
-											{...user,editing:!user.editing}:user);
-		case types.EDIT_USER:
-			return state.users.map((user) => {
-				if(user.id === action.id){
-          return {
-            ...user,
-            firstname:action.values.newFirstName,
-            lastname:action.values.newLastName,
-            contact:action.values.newContact,
-            address:action.values.newAddress,
-            editing:!user.editing
-          }
-				} else return user;
-			})
+            console.log("editing")
+			return {
+                ...state,
+                users: state.users.map((user) => user.id === action.payload ?
+                {...user,editing:!user.editing}:user)
+            }
+		case types.UPDATE_USER:
+            console.log("Updating")
+			return {
+                ...state,
+                users: state.users.map((user) => {
+                    if(user.id === action.payload.id){
+              return {
+                ...user,
+                firstname:action.payload.newFirstName,
+                lastname:action.payload.newLastName,
+                contact:action.payload.newContact,
+                address:action.payload.newAddress,
+                editing:!user.editing
+              }
+                    } else return user;
+                })
+            }
 		default:
 			return state;
     }

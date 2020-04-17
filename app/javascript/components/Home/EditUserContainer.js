@@ -1,10 +1,13 @@
 //edit container.js
 import EditUserComponent from './EditUserComponent'
 import { connect } from 'react-redux'
-import editUser from '../ducks/actions'
+import { userOperations } from '../ducks'
 
-const mapDispatchToProps = { 
-  editUser 
+const mapDispatchToProps = dispatch => { 
+  const updateUser = (value) => dispatch(userOperations.updatingUser(value))
+  return {
+    updateUser
+  }
 }
 
 

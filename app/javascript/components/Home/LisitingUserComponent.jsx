@@ -10,7 +10,7 @@ class LisitingUserComponent extends Component {
         {this.props.users.map((user) => (
           <div key={user.id}>
             {user.editing ? <EditUserContainer user={user} key={user.id}/> :
-                            <NewUserContainer key={user.id} user={user} />}
+                            <NewUserContainer  user={user} key={user.id}/>}
           </div>
         ))}
       </div>

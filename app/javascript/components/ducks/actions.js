@@ -1,5 +1,5 @@
 // Actions
-import { default as types } from './types'
+import types from './types'
 
 const addUser = (payload) => {
   return {type: types.ADD_USER, payload};

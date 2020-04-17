@@ -1,4 +1,4 @@
 import userReducer from './userReducer'
-export { default as types } from './types'
-export { default as actions } from './actions'
+export { default as userTypes } from './types'
+export { default as userOperations } from './operations'
 export default userReducer
