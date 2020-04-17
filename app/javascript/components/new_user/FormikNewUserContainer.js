@@ -1,6 +1,6 @@
 import FormikNewUserComopnent from './FormikNewUserComponent'
 import { connect } from 'react-redux'
-import addUser from '../ducks/actions'
+import addUser from '../ducks'
 
 const mapDispatchToProps = {
     addUser

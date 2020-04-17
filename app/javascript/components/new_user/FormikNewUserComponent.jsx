@@ -2,6 +2,8 @@ import React from 'react'
 import { FormSchema } from '../common/validation'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 
+
+
 const FormikNewUserComopnent = () => {
   return (
       <Formik
@@ -14,8 +16,9 @@ const FormikNewUserComopnent = () => {
         validationSchema={FormSchema}
         onSubmit={(values,{ setSubmitting }) => {
           setTimeout(()=>{
-            addUser(values);
             console.log("Formik Submit", values);
+            addUser(values);
+            console.log("Submited");
             setSubmitting(false);
           },400)
         }}
