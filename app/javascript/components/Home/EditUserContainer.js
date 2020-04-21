@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { userOperations } from '../ducks'
 
 const mapDispatchToProps = dispatch => { 
-  const updateUser = (value) => dispatch(userOperations.updatingUser(value))
+  const updateUser = (values) => dispatch(userOperations.updatingUser(values))
   return {
     updateUser
   }

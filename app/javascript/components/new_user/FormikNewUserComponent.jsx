@@ -29,6 +29,9 @@ const FormikNewUserComopnent = (props) => {
         onSubmit={(values,{ setSubmitting }) => {
           setTimeout(()=>{
             console.log("Formik Submit", values);
+            console.log(" ");
+            console.log(" ");
+            console.log("Formik First name", values.firstname);
             props.addUser(values);
             console.log("Submited");
             setSubmitting(false);

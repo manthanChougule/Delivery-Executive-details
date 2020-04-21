@@ -35,12 +35,13 @@ const userReducer = (state = initial, action ) => {
                 ...state,
                 users: state.users.map((user) => {
                     if(user.id === action.payload.id){
+                        console.log("Updating 2")
               return {
                 ...user,
-                firstname:action.payload.newFirstName,
-                lastname:action.payload.newLastName,
-                contact:action.payload.newContact,
-                address:action.payload.newAddress,
+                firstname:action.payload.newFirstname,
+                // lastname:action.payload.newLastname,
+                // contact:action.payload.newContact,
+                // address:action.payload.newAddress,
                 editing:!user.editing
               }
                     } else return user;
